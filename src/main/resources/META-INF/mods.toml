@@ -1,0 +1,26 @@
+modLoader="javafml" # 必填
+loaderVersion="[47,)" # Forge 47.x 都能运行
+
+license="NC"
+
+[[mods]]
+modId="bofangmod"
+version="1.0.0"
+displayName="麦块文本"
+displayURL="https://space.bilibili.com/353609880"
+authors="XiaoBiniaoX"
+description='''注意延迟,喵.'''
+
+[[dependencies.bofangmod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.bofangmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
