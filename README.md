@@ -1,5 +1,5 @@
 # Minecraft-Story-Universal-Tool
 麦块播放是一个1.20.1Forge mod,旨在通过添加一堆小功能以适应minecraft剧情地图开发
 允许您通过/binsay来去择定你要播放的json文本
-json示例会在启动游戏的时候生成在config\binbulid\text下
-文本处你可以写指令，每个文本的独立延迟必须要写
+json示例会在启动游戏的时候生成在binbulid\text下
+文本处你可以写指令，每个文本有相对独立的延迟
