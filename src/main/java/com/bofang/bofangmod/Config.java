@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 
 public class Config {
     public static Path getConfigPath() {
-        return Paths.get("").resolve("config").resolve("binbulid");
+        return Paths.get("").resolve("binbulid");
     }
     
     public static Path getTextPath() {

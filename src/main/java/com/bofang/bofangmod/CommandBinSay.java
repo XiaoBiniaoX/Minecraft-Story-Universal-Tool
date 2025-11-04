@@ -18,7 +18,12 @@ public class CommandBinSay {
                         return startPlayback(context.getSource(), fileName);
                     })))
             .then(Commands.literal("stop")
-                .executes(context -> stopPlayback(context.getSource())))
+                .executes(context -> stopAllPlayback(context.getSource()))
+                .then(Commands.argument("filename", StringArgumentType.string())
+                    .executes(context -> {
+                        String fileName = StringArgumentType.getString(context, "filename");
+                        return stopPlayback(context.getSource(), fileName);
+                    })))
         );
     }
 
@@ -31,8 +36,15 @@ public class CommandBinSay {
         return Command.SINGLE_SUCCESS;
     }
 
-    private static int stopPlayback(CommandSourceStack source) {
-        BofangMod.messageManager.stopPlayback();
+    private static int stopPlayback(CommandSourceStack source, String fileName) {
+        BofangMod.messageManager.stopPlayback(fileName);
+        source.sendSuccess(() -> Component.literal("已停止播放: " + fileName), true);
+        return Command.SINGLE_SUCCESS;
+    }
+
+    private static int stopAllPlayback(CommandSourceStack source) {
+        BofangMod.messageManager.stopAllPlaybacks();
+        source.sendSuccess(() -> Component.literal("已停止所有播放"), true);
         return Command.SINGLE_SUCCESS;
     }
 }
